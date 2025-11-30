@@ -1,0 +1,314 @@
+<!--
+File: Mayanak_Rabari_website.html
+Single-file responsive portfolio/website for Mayanak Rabari (age 13, 7th grade, passionate writer).
+How to use: Save this file as `index.html` and open in a browser. No build tools required.
+You can edit the sample writings in the <section id="writings"> area.
+
+Design notes: Orange-themed palette, responsive, accessible, clean typography.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mayanak Rabari — Young Writer</title>
+  <meta name="description" content="Portfolio and writings of Mayanak Rabari — 13-year-old writer and 7th grade student." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --orange-50: #fff7ed;
+      --orange-100: #ffedd5;
+      --orange-300: #fdba74;
+      --orange-500: #f97316; /* main */
+      --orange-700: #c2410c;
+      --bg: #fff;
+      --muted: #6b7280;
+      --card-shadow: 0 6px 20px rgba(249,115,22,0.12);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--orange-50),#ffffff);color:#111;height:100%}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--orange-500),var(--orange-700));display:grid;place-items:center;color:#fff;font-weight:800;font-size:20px;box-shadow:var(--card-shadow)}
+    nav{display:flex;gap:12px}
+    .nav-link{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--orange-700);font-weight:600}
+    .cta{background:var(--orange-500);color:white;padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:center;margin-top:28px}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.8),#fff);padding:22px;border-radius:18px;box-shadow:var(--card-shadow)}
+    .hero h1{margin:0;font-size:28px}
+    .subtitle{color:var(--muted);margin-top:8px}
+    .profile-photo{width:100%;border-radius:12px;overflow:hidden;border:6px solid white;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+    .profile-photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+    /* Sections */
+    section{margin-top:26px}
+    .section-title{display:flex;align-items:center;justify-content:space-between}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:14px}
+    .card{background:white;padding:16px;border-radius:12px;box-shadow:var(--card-shadow);border:1px solid rgba(0,0,0,0.03)}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Writings */
+    .writing-title{font-weight:700;margin:0}
+    .writing-excerpt{margin:8px 0;color:var(--muted)}
+
+    /* Footer */
+    footer{margin-top:36px;padding:22px;border-radius:12px;background:linear-gradient(90deg,var(--orange-100),#fff);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      nav{display:none}
+      header{align-items:flex-start}
+    }
+
+    /* small utilities */
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(249,115,22,0.08);color:var(--orange-700);font-weight:600;font-size:13px}
+    .small{font-size:13px}
+    .center{text-align:center}
+
+    /* accessible focus */
+    a:focus{outline:3px solid rgba(249,115,22,0.25);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <div style="font-weight:800">Mayanak Rabari</div>
+          <div class="muted small">13 • 7th Grade • Young Writer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#writings">Writings</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="cta" href="#writings">Read Writings</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card">
+          <span class="tag">Hello — I'm Mayanak</span>
+          <h1>Stories, Poems & Short Notes by a 13‑year‑old with a big imagination</h1>
+          <p class="subtitle">I love reading, writing and sharing small stories inspired by school, friends and the world around me.</p>
+
+          <div style="display:flex;gap:12px;margin-top:16px;align-items:center">
+            <div style="flex:1">
+              <div class="card" style="padding:12px">
+                <div style="font-weight:700">Favourite things</div>
+                <div class="muted small" style="margin-top:6px">Orange, Books, Rainy Days, Short Stories, School Projects</div>
+              </div>
+            </div>
+
+            <div style="width:160px">
+              <div class="card center" style="padding:12px">
+                <div style="font-weight:700">Age</div>
+                <div class="muted" style="font-size:20px;margin-top:6px">13</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:12px">
+            <a class="nav-link" href="#writings">See Writings</a>
+            <a class="nav-link" href="#contact">Say Hi</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="profile-photo">
+            <!-- Replace the src with a real photo if you have one -->
+            <img src="https://via.placeholder.com/480x480.png?text=Mayanak+Rabari" alt="Photo of Mayanak" />
+          </div>
+
+          <div style="margin-top:12px;">
+            <div class="card">
+              <div style="font-weight:800">Quick facts</div>
+              <ul class="muted small" style="margin-top:8px;padding-left:18px">
+                <li>Lives in: (add city)</li>
+                <li>Class: 7th Grade</li>
+                <li>Hobbies: Writing, Reading, Drawing</li>
+              </ul>
+            </div>
+
+            <div class="card" style="margin-top:12px">
+              <div style="font-weight:700">Get updates</div>
+              <p class="muted small">Ask a parent/guardian to add an email here for newsletter updates (non-commercial).</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about">
+        <div class="section-title">
+          <h2>About Mayanak</h2>
+          <div class="muted small">Curious • Kind • Creative</div>
+        </div>
+        <div class="cards" style="margin-top:12px">
+          <div class="card">
+            <h3 style="margin:0">A young storyteller</h3>
+            <p class="muted">Mayanak loves to write short stories and poems about school life, friends and tiny adventures. She likes simple language and bright ideas.</p>
+            <p class="small">Example writing prompts she enjoys: <em>"A rainy day secret," "The missing notebook," "A letter to tomorrow"</em></p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0">School life</h3>
+            <p class="muted">Studies in 7th grade and participates in class magazine and storytelling competitions. Loves to read fantasy and realistic short stories.</p>
+          </div>
+
+          <div class="card">
+            <h3 style="margin:0">Goals</h3>
+            <p class="muted">Publish a small collection of stories, improve handwriting, and share work with friends and teachers.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="writings">
+        <div class="section-title">
+          <h2>Writings</h2>
+          <div class="muted small">Short stories, poems and flash fiction</div>
+        </div>
+
+        <!-- Sample writings: edit or expand these items -->
+        <div class="cards" style="margin-top:12px">
+          <article class="card" aria-labelledby="w1">
+            <h3 id="w1" class="writing-title">The Little Notebook</h3>
+            <div class="muted small">Flash fiction — 350 words</div>
+            <p class="writing-excerpt">It was the smallest notebook in the whole classroom, but it held the loudest ideas. Every time Meera opened it, the pages smelled like mangoes and Tuesday afternoons...</p>
+            <a class="nav-link" href="#" onclick="openModal(event,'The Little Notebook','\nIt was the smallest notebook in the whole classroom, but it held the loudest ideas. Every time Meera opened it, the pages smelled like mangoes and Tuesday afternoons. She wrote one sentence and the school bell would turn into a drummer.\n\nMayanak wrote this story inspired by a real small red notebook.\n')">Read more</a>
+          </article>
+
+          <article class="card" aria-labelledby="w2">
+            <h3 id="w2" class="writing-title">Monsoon Poems</h3>
+            <div class="muted small">Poem — 120 words</div>
+            <p class="writing-excerpt">Rain writes on the window, fingered words that vanish when you blink. The cat watches and learns how to be patient...</p>
+            <a class="nav-link" href="#" onclick="openModal(event,'Monsoon Poems','\nRain writes on the window, fingered words that vanish when you blink. The cat watches and learns how to be patient.\n\nA short poem by Mayanak about rainy afternoons.\n')">Read more</a>
+          </article>
+
+          <article class="card" aria-labelledby="w3">
+            <h3 id="w3" class="writing-title">A Friend Called Noon</h3>
+            <div class="muted small">Short story — 500 words</div>
+            <p class="writing-excerpt">Noon was not a person, but the moment when the karela lemonade tasted perfect. The day the clock stopped at 12:00, something magical happened...</p>
+            <a class="nav-link" href="#" onclick="openModal(event,'A Friend Called Noon','\nNoon was not a person, but the moment when the karela lemonade tasted perfect. The day the clock stopped at 12:00, a small clock in the school playground began to tick backwards.\n\nBy Mayanak.\n')">Read more</a>
+          </article>
+        </div>
+
+      </section>
+
+      <section id="gallery">
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <div class="muted small">Sketches, notebooks and school moments</div>
+        </div>
+
+        <div class="cards" style="margin-top:12px">
+          <div class="card center">
+            <div style="font-weight:700">Notebook sketch</div>
+            <img src="https://via.placeholder.com/400x220.png?text=Notebook+Sketch" alt="Notebook sketch" style="width:100%;border-radius:8px;margin-top:8px"/>
+          </div>
+          <div class="card center">
+            <div style="font-weight:700">School magazine</div>
+            <img src="https://via.placeholder.com/400x220.png?text=School+Magazine" alt="School magazine" style="width:100%;border-radius:8px;margin-top:8px"/>
+          </div>
+          <div class="card center">
+            <div style="font-weight:700">Poem page</div>
+            <img src="https://via.placeholder.com/400x220.png?text=Poem+Page" alt="Poem page" style="width:100%;border-radius:8px;margin-top:8px"/>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-title">
+          <h2>Contact & Share</h2>
+          <div class="muted small">If you'd like to share feedback or invite Mayanak to a school event (parents/teachers only)</div>
+        </div>
+
+        <div class="cards" style="margin-top:12px">
+          <div class="card">
+            <form onsubmit="event.preventDefault(); alert('Please contact via parent or teacher.');" aria-label="Contact form">
+              <label class="small">Your name (Parent/Teacher)</label>
+              <input required placeholder="Full name" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #eee" />
+
+              <label class="small" style="margin-top:8px;display:block">Message</label>
+              <textarea required placeholder="Message about an event, feedback or collaboration" style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #eee" rows="4"></textarea>
+
+              <div style="display:flex;gap:8px;margin-top:10px">
+                <button type="submit" class="cta">Send</button>
+                <button type="button" onclick="copyProfileLink()" class="nav-link">Copy profile link</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700">Share</div>
+            <p class="muted small">Share this page with friends and teachers.</p>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button onclick="share('facebook')" class="nav-link">Facebook</button>
+              <button onclick="share('whatsapp')" class="nav-link">WhatsApp</button>
+              <button onclick="share('copy')" class="nav-link">Copy link</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>
+        <div style="font-weight:800">Mayanak Rabari</div>
+        <div class="muted small">Young writer • 7th Grade</div>
+      </div>
+      <div class="muted small">Made with ♥ — Theme: Orange</div>
+    </footer>
+  </div>
+
+  <!-- Modal for reading full writing -->
+  <div id="modal" role="dialog" aria-modal="true" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;padding:20px">
+    <div style="max-width:900px;width:100%;background:white;border-radius:12px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modal-title" style="margin:0"></h3>
+        <button onclick="closeModal()" aria-label="Close">✕</button>
+      </div>
+      <div id="modal-body" style="margin-top:12px;color:var(--muted);white-space:pre-wrap"></div>
+      <div style="margin-top:12px;text-align:right">
+        <button onclick="closeModal()" class="nav-link">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(e, title, body){
+      e.preventDefault();
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent = body;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal(){document.getElementById('modal').style.display = 'none'}
+
+    function copyProfileLink(){
+      navigator.clipboard && navigator.clipboard.writeText(window.location.href).then(()=> alert('Link copied to clipboard'));
+    }
+    function share(provider){
+      const url = encodeURIComponent(window.location.href);
+      if(provider === 'facebook') window.open('https://www.facebook.com/sharer/sharer.php?u='+url,'_blank');
+      else if(provider === 'whatsapp') window.open('https://api.whatsapp.com/send?text='+url,'_blank');
+      else {navigator.clipboard && navigator.clipboard.writeText(window.location.href).then(()=> alert('Link copied'))}
+    }
+  </script>
+</body>
+</html>
